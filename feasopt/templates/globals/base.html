@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FeasOpt!
+        {% block title %}{% endblock %}
+    </title>
+
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'semantic-ui/components/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'semantic-ui/components/icon.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/semantic.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mediaquery.css' %}">
+
+    {% block css %}
+    {% endblock %}
+
+</head>
+
+<body id="body">
+
+{% block body %}
+    {% block navBar %}
+    {% endblock %}
+{% endblock %}
+
+</body>
+
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/semantic.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/dropdown.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/tab.js' %}"></script>
+
+<script>
+    $(document).ready(function(){
+        $('.ui.accordion').accordion('refresh');
+        $('.ui.sidebar')
+        //.sidebar('toggle')
+            .sidebar('attach events', '#navbar #sidebartrigger')
+            .sidebar('setting', 'transition', 'overlay')
+        ;
+    });
+
+</script>
+
+
+{% block javascript %}
+{% endblock %}
+
+</html>

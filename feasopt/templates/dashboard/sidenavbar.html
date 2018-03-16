@@ -1,0 +1,63 @@
+{% load static %}
+
+{% block sidenav %}
+    <div class="ui sidebar inverted vertical menu">
+        <div class="ui doubling stackable grid container">
+
+            <div class="ui inverted centered raised item"></div>
+
+            {% comment %}The User Item starts here!{% endcomment %}
+            <div class="ui inverted centered raised item">
+                <img src="{% static 'img/zlatan.jpg' %}" class="ui small circular centered image">
+
+                <br>
+
+                <div class="ui bottom attached inverted" style="text-align: center;">
+                    <h2 class="ui inverted header">Zlatan Ibrahimovic</h2>
+                    <span class="ui inverted meta">C.E.O. Truckers</span>
+                </div>
+
+            </div>
+            {% comment %}The User Item ends here!{% endcomment %}
+
+            <div class="ui divider inverted"></div>
+
+            {% comment %}The Modules Accordian starts here!{% endcomment %}
+            <div class="ui vertical inverted accordion fluid menu" style="margin-bottom: 24px;">
+                <div class="item">
+                    <a class="active title">
+                        <i class="dropdown icon"></i>
+                        <span class="ui inverted header">
+                            Modules
+                        </span>
+                    </a>
+                    <div class="active content">
+                        <div class="link items">
+{% comment %}
+                            <a class="item" href="{% url 'visitorhostel:visitorhostel' %}">
+                                <h4>Visitor Hostel Module</h4>
+                            </a>
+{% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% comment %}The Modules Accordian ends here!{% endcomment %}
+
+            {% comment %}The Profile Item starts here!{% endcomment %}
+            <a class="centered raised item" href="">
+                <span class="inverted header">Profile</span>
+                <i class="large inverted user icon right floated"></i>
+            </a>
+            {% comment %}The Logout Item starts here!{% endcomment %}
+            <div class="centered raised item">
+                <span class="inverted header">Logout</span>
+                <i class="large inverted sign out icon right floated"></i>
+            </div>
+            <div class="item"></div>
+            {% comment %}The Logout Item ends here!{% endcomment %}
+
+        </div>
+    </div>
+
+{% endblock %}
