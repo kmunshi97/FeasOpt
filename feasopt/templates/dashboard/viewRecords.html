@@ -1,0 +1,135 @@
+{% load static %}
+<div class="ui pointing secondary menu">
+    <a class="active item" data-tab="tab1content1">
+        Drivers
+    </a>
+
+    <a class="item" data-tab="tab1content2">
+        Trucks
+    </a>
+</div>
+
+<div class="ui active tab" data-tab="tab1content1">
+    <div class="ui vertical segment">
+        <table class="ui very basic collapsing celled sortable table"
+               style="padding-left: 2.5%; padding-right: 2.5%;padding-top: 1%; padding-bottom: 1.5%; margin: auto;">
+            <thead>
+            <tr>
+                <th>
+                    Aadhaar
+                </th>
+
+                <th class="five wide column sorted ascending" >
+                    Driver Name
+                </th>
+
+                <th>
+                    Phone Number
+                </th>
+
+                <th class="six wide column">
+                    Address
+                </th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for driver in allDrivers %}
+                <tr>
+                    <td>
+                        {{driver.driverVerficationID}}
+                    </td>
+
+                    <td class="sorted ascending">
+                        <h4 class="ui image header">
+                            <img src="{% static 'img/zlatan.jpg' %}" class="ui mini circular image">
+                            <div class="content">
+                                {{driver.driverName}}
+                                <div class="sub header">
+                                    gmail@zlatan.com
+                                </div>
+                            </div>
+                        </h4>
+                    </td>
+
+                    <td>
+                        {{driver.driverPhoneNumber}}
+                    </td>
+
+                    <td>
+                        {{driver.driverAddress}}
+                    </td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+
+        <br>
+        <div class="ui divider"></div>
+    </div>
+</div>
+
+<div class="ui tab" data-tab="tab1content2">
+    <div class="ui vertical segment">
+        <table class="ui very basic collapsing celled sortable table"
+               style="padding-left: 2.5%; padding-right: 2.5%;padding-top: 1%; padding-bottom: 1.5%; margin: auto;">
+            <thead>
+            <tr>
+                <th class="eight wide column sorted ascending" >
+                    Driver Name
+                </th>
+
+                <th>
+                    Truck Number
+                </th>
+
+                <th>
+                    Certificate
+                </th>
+
+                <th>
+                    Exipires in (days)
+                </th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for truck in allTrucks %}
+                {% for cert in truck.certificates.all %}
+
+                <tr>
+                    <td class="sorted ascending">
+                        <h4 class="ui image header">
+                            <img src="{% static 'img/zlatan.jpg' %}" class="ui mini circular image">
+                            <div class="content">
+                                {{truck.driverID}}
+                                <div class="sub header">
+                                    gmail@zlatan.com
+                                </div>
+                            </div>
+                        </h4>
+                    </td>
+
+                    <td>
+                        {{truck.truckNumber}}
+                    </td>
+
+                    <td>
+                        {{cert.certificate.certificateType}}
+                    </td>
+
+                    <td>
+                        {{cert.certificate.days_left}}
+                    </td>
+                </tr>
+            {% endfor %}
+            {% endfor %}
+
+            </tbody>
+        </table>
+
+        <br>
+        <div class="ui divider"></div>
+    </div>
+</div>

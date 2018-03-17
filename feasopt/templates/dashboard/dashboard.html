@@ -12,8 +12,46 @@
         {% include 'dashboard/navbar.html' %}
     {% endblock %}
 
+    {% block index %}
+        {% include 'dashboard/index.html' %}
+    {% endblock %}
+
 {% endblock %}
 
-
 {% block javascript %}
+    <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/datepicker.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tablesort.js' %}"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#textLoader").toggle();
+            $("#replacement-card").toggle();
+            setTimeout(loader, 1750);
+        });
+
+        function loader() {
+            $("#textLoader").toggle();
+            $("#replacement-card").toggle();
+            $("#loader").removeClass("active");
+            $("#loader").addClass("disabled");
+        }
+
+        $(".delete").on('click', function(){
+            var id = $(this).attr('data');
+
+            $.ajax({
+                type: 'get',
+                url: '/dashboard/delete',
+                data: {'notif': id},
+                success: function(data){
+                    alert('Seen!');
+                },
+                error: function(err, data) {
+                    alert('Error');
+                }
+            });
+        });
+    </script>
+
 {% endblock %}

@@ -23,37 +23,20 @@
                 <div class="ui bottom right dropdown item">
                     <i class="ui large alarm outline icon"></i>
 
-                    <div class="top right attached ui red large label">
-                        3
-                    </div>
-
                     <div class="menu" style="width: 27.5vw;">
                         <div class="header">
-                            <h4 class="ui header" style="width: 100vw;">
+                            <h4 class="ui header">
                                 Notifications
-                                <a class="right floated meta">Mark all as read</a>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </h4>
                         </div>
 
                         <div class="divider"></div>
-                        <a class="item">
-                            <div class="ui top aligned divided list">
-                                <div class="item">
-                                    <div class="right floated content">
-                                        <button class="circular very basic mini ui icon button">
-                                            <i class="tiny blue icon check"></i>
-                                        </button>
-                                    </div>
 
-                                    <img class="ui avatar image" src="{% static 'img/zlatan.jpg' %}" />
-
-                                    <div class="content" style="color: #000;">
-                                        <div class="header">Zlatan Ibrahimovic</div>
-                                        <div class="meta">Has scored a hattrick!</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
+                        <div  style="width: 27.5vw; max-height: 25vh; overflow-y: scroll;">
+                            {% comment %}The Notifications are included from this file{% endcomment %}
+                            {% include 'reminders/reminders.html' %}
+                        </div>
 
                         <a class="item">
                             <h4 class="ui center aligned header">See all</h4>

@@ -1,0 +1,32 @@
+{% load static %}
+
+{% for notification in allNotifications %}
+<a class="item" id="notification_{{ notification.id }}">
+    <div class="ui top aligned divided list">
+        <div class="item">
+            <div class="right floated content">
+                <button class="circular very basic ui icon button delete" data="{{ notification.id }}"
+                        onclick="$('#notification_{{ notification.id }}').remove();">
+                    <i class="red delete icon"></i>
+                </button>
+            </div>
+
+            <img class="ui circular image" style="width: 45px; height: 45px;" src="{% static 'img/zlatan.jpg' %}" />
+
+            <div class="content" style="color: #000;">
+                <div class="header">
+                    {{ notification.driverName }}
+                    <br>
+                    {{ notification.truckNumber }}
+                </div>
+
+                <div class="meta">
+                    {% comment %}TODO{% endcomment %}
+                    {{ notification.certificateType }}  Certificate expires in {{ notification.daysLeft }} days!
+                </div>
+            </div>
+        </div>
+    </div>
+</a>
+
+{% endfor %}

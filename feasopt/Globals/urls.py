@@ -8,4 +8,5 @@ urlpatterns = [
 
     url(r'^$', views.globals, name='login'),
     url(r'^dashboard/', views.dashboard, name='dashboard'),
+    url(r'^dashboard/delete/', views.delete_notif, name='delete_notif'),
 ]
