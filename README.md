@@ -1,4 +1,8 @@
 # FeasOpt Task #1 (Odd Rollnumber: 2015121)
+All the migrations and databases are included in the Repository!
+For Screenshots, checkout the screenshot folder!
+
+Credentials: root:letmein
 
 ## Requirements
 
@@ -11,7 +15,6 @@ Django==1.11.4+
   * Install virtualenv `$ sudo apt install python-virtualenv`  
   * Create a virtual environment `$ virtualenv env -p python3`  
   * Activate the env: `$ source env/bin/activate`  
-  * Install the requirements: `$ pip install -r requirements.txt`  
   * Change directory to FusionIIIT `$ cd FusionIIIT`
   * Make migrations `$ python manage.py makemigrations`  
   * Migrate the changes to the database `$ python manage.py migrate`  
@@ -23,5 +26,3 @@ Django==1.11.4+
   * CSE 2015121
   * kanishkamunshi@iiitdmj.ac.in  
   * PDPM Indian Institute of Information Technology Design & Manufacturing, Jabalpur
-
-For Screenshots, checkout the screenshot folder!
